@@ -1,0 +1,19 @@
+{% extends 'components/layout.html' %}
+
+{% block content %}
+<table>
+    <h1>This is {{ names }}, here are his stats:</h1>
+    <tr>
+      <th>Type</th>
+      <th>Abilities</th>
+      <th> Weight </th>
+      <th> Versions</th>
+    </tr>
+    <tr>
+        <td>{{ Types }}</td>
+        <td>{{ Abilities }}</td>
+        <td>{{ Weight }}</td>
+        <td>{{ Versions }}</td>
+      </tr>
+  </table>
+{% endblock content %}
