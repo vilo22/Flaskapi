@@ -1,0 +1,25 @@
+<nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="{{ url_for('home') }}">
+      <img src="static/images/magikarp.jpg" width="30" height="30" class="top-image" alt="">
+      <spam class='alt-color'>Pokemon</spam>
+    </a>
+    <a class="navbar-brand" href="{{ url_for('home') }}">
+      <spam class='alt-color'>Home</spam>
+    </a>
+    <a class="navbar-brand" href="{{ url_for('pokemon_api') }}">
+      <spam class='alt-color'>Pokemon API</spam>
+    </a>
+    <a class="navbar-brand" href="{{ url_for('about') }}">
+      <spam class='alt-color'>About</spam>
+    </a>
+    <ul class = 'navbar-nav ml-auto'>
+    <li class="nav-item active">
+    <a class="navbar-brand" href="{{ url_for('auth.login') }}">
+      <spam class='alt-color'>Login</spam>
+    </a>
+    <a class="navbar-brand" href="{{ url_for('auth.register') }}">
+      <spam class='alt-color'>Register</spam>
+    </a>
+    </li>
+    </ul>
+  </nav>
