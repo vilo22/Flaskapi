@@ -11,3 +11,9 @@ from .import routes
 from .auth.routes import auth
 
 app.register_blueprint(auth)
+
+from .models import db, login 
+from flask_migrate import Migrate
+
+db.init_app(app)
+migrate = Migrate(app, db)
