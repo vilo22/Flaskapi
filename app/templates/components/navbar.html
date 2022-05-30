@@ -1,4 +1,4 @@
-<nav class="navbar navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="{{ url_for('home') }}">
       <img src="static/images/magikarp.jpg" width="30" height="30" class="top-image" alt="">
       <spam class='alt-color'>Pokemon</spam>
@@ -13,13 +13,20 @@
       <spam class='alt-color'>About</spam>
     </a>
     <ul class = 'navbar-nav ml-auto'>
-    <li class="nav-item active">
-    <a class="navbar-brand" href="{{ url_for('auth.login') }}">
-      <spam class='alt-color'>Login</spam>
-    </a>
-    <a class="navbar-brand" href="{{ url_for('auth.register') }}">
-      <spam class='alt-color'>Register</spam>
-    </a>
-    </li>
+      {% if current_user.is_authenticated %}
+      <li class="nav-item active">
+        <a class="nav-link">{{ "{} {}".format(current_user.first_name, current_user.last_name) }}</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{{ url_for('auth.logout') }}">Logout</a>
+      </li>
+      {% else %}
+      <li class="nav-item active">
+        <a class="nav-link" href="{{ url_for('auth.login') }}">Login</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{{ url_for('auth.register') }}">Register</a>
+      </li>
+      {% endif %}
     </ul>
   </nav>
